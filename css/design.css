@@ -96,20 +96,20 @@ body {
   border-bottom: none;
 }
 
-.pagination {
+.pagination, .search-pagination {
   margin: 40px 0 0 0;
   text-align: center;
 }
 
-.pagination li {
+.pagination li, .search-pagination li {
   display: inline;
 }
 
-.pagination li:hover {
+.pagination li:hover, .search-pagination li:hover {
   cursor: pointer;
 }
 
-.pagination li a {
+.pagination li a, .search-pagination li a {
   border: 1px solid #eaeaea;
   border-radius: 5px;
   padding: 3px 8px;
@@ -118,7 +118,9 @@ body {
 }
 
 .pagination li a.active,
-.pagination li a:hover {
+.pagination li a:hover,
+.search-pagination li a.active,
+.search-pagination li a:hover {
   background-color: #4ba6c3;
   color: #fff;
 }
