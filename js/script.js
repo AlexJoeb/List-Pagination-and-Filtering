@@ -60,7 +60,7 @@ var initSearch = function initSearch(text) {
   searchResults = allStudents.filter(function (e) {
     var obj = liToObject(e);
 
-    if (obj.name.includes(text) || obj.email.split("@")[0].includes(text) || obj.joinDate.split(" ")[1].includes(text) || obj.joinDate.split(" ")[1].split("/").join("").includes(text)) {
+    if (obj.name.toLowerCase().includes(text) || obj.email.split("@")[0].toLowerCase().includes(text) || obj.joinDate.split(" ")[1].toLowerCase().includes(text) || obj.joinDate.split(" ")[1].split("/").join("").toLowerCase().includes(text)) {
       return obj;
     }
   });
