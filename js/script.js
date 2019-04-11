@@ -60,6 +60,8 @@ var initSearch = function initSearch(text) {
   searchResults = allStudents.filter(function (e) {
     var obj = liToObject(e);
 
+    text = text.toLowerCase();
+
     if (obj.name.toLowerCase().includes(text) || obj.email.split("@")[0].toLowerCase().includes(text) || obj.joinDate.split(" ")[1].toLowerCase().includes(text) || obj.joinDate.split(" ")[1].split("/").join("").toLowerCase().includes(text)) {
       return obj;
     }
@@ -94,9 +96,11 @@ var initSearch = function initSearch(text) {
     searchArray[pageIndex].push(studentObject);
   }
 
-  initSearchPaginationBar();
-  addListOfStudentsToPage(searchArray[0]);
-  setSearchPaginationBarPage(1);
+  if(searchArray.length > 0){
+    initSearchPaginationBar();
+    addListOfStudentsToPage(searchArray[0]);
+    setSearchPaginationBarPage(1);
+  }
 };
 
 var initPagination = function initPagination() {
